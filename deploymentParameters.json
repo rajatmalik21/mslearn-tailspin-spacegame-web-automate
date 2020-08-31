@@ -1,0 +1,31 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "deployPrefix": {
+            "value": "-dev-"
+        },
+        "keyVaultName": {
+          "value": "tailspin-vault-11766"
+        },
+        "uniqueSuffix": {
+            "value": "9621"
+        },
+        "adminPassword": {
+            "reference": {
+              "keyVault": {
+                "id": "tailspin-vault-11766"
+              },
+              "secretName": "adminPassword"
+            }
+        },
+        "firstRun": {
+            "reference": {
+                "keyVault": {
+                    "id": ""
+                },
+                "secretName": "firstRun"
+            }
+        }
+    }
+}
